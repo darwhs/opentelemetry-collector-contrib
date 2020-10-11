@@ -58,6 +58,15 @@ func TestMetric10kDPS(t *testing.T) {
 				ExpectedMaxRAM: 91,
 			},
 		},
+		{
+			"AWSEmf",
+			testbed.NewOTLPMetricDataSender("localhost", testbed.GetAvailablePort(t)),
+			datareceivers.NewMockMetricDataReceiver(testbed.GetAvailablePort(t)),
+			testbed.ResourceSpec{
+				ExpectedMaxCPU: 300,
+				ExpectedMaxRAM: 2048,
+			},
+		},
 	}
 
 	for _, test := range tests {
