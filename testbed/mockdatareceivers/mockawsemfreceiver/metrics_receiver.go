@@ -143,7 +143,7 @@ func (ar *MockAwsXrayReceiver) Start(_ context.Context, host component.Host) err
 	return err
 }
 var previousTimestamp int64
-// handleRequest parses an http request containing aws json request and passes the count of the traces to next consumer
+// handleRequest parses an http request containing aws json request and passes the count of the metrics to next consumer
 func (ar *MockAwsXrayReceiver) handleRequest(ctx context.Context, req *http.Request) error {
 	transport := "http"
 	if ar.config.TLSCredentials != nil {

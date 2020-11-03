@@ -45,8 +45,8 @@ func NewMockAwsXrayDataReceiver(port int) *MockAwsXrayDataReceiver {
 //Start listening on the specified port
 func (ar *MockAwsXrayDataReceiver) Start(tc consumer.TracesConsumer, _ consumer.MetricsConsumer, _ consumer.LogsConsumer) error {
 	var err error
-	os.Setenv("AWS_ACCESS_KEY_ID", "AWS_ACCESS_KEY_ID")
-	os.Setenv("AWS_SECRET_ACCESS_KEY", "AWS_SECRET_ACCESS_KEY")
+	os.Setenv("AWS_ACCESS_KEY_ID", "placeholder")
+	os.Setenv("AWS_SECRET_ACCESS_KEY", "placeholder")
 
 	rootCAs, _ := x509.SystemCertPool()
 	if rootCAs == nil {
