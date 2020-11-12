@@ -89,7 +89,6 @@ func (ar *MockAwsXrayDataReceiver) GenConfigYAMLStr() string {
 	// Note that this generates an exporter config for agent.
 	return fmt.Sprintf(`
   awsxray:
-    local_mode: true
     endpoint: localhost:%d
     no_verify_ssl: true
     region: us-west-2`, ar.Port)
