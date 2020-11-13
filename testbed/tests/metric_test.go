@@ -21,7 +21,6 @@ import (
 	scenarios "go.opentelemetry.io/collector/testbed/tests"
 
 	"github.com/open-telemetry/opentelemetry-collector-contrib/testbed/datareceivers"
-	"github.com/open-telemetry/opentelemetry-collector-contrib/testbed/datasenders"
 )
 
 func TestMetric10kDPS(t *testing.T) {
@@ -31,7 +30,7 @@ func TestMetric10kDPS(t *testing.T) {
 		receiver     testbed.DataReceiver
 		resourceSpec testbed.ResourceSpec
 	}{
-		{
+		/*{
 			"OTLP",
 			testbed.NewOTLPMetricDataSender(testbed.DefaultHost, testbed.GetAvailablePort(t)),
 			testbed.NewOTLPDataReceiver(testbed.GetAvailablePort(t)),
@@ -56,6 +55,15 @@ func TestMetric10kDPS(t *testing.T) {
 			testbed.ResourceSpec{
 				ExpectedMaxCPU: 120,
 				ExpectedMaxRAM: 91,
+			},
+		},*/
+		{
+			"AWSEmf",
+			testbed.NewOTLPMetricDataSender("localhost", testbed.GetAvailablePort(t)),
+			datareceivers.NewMockMetricDataReceiver(testbed.GetAvailablePort(t)),
+			testbed.ResourceSpec{
+				ExpectedMaxCPU: 60,
+				ExpectedMaxRAM: 90,
 			},
 		},
 	}

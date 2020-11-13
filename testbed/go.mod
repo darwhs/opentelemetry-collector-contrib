@@ -10,6 +10,7 @@ require (
 	github.com/open-telemetry/opentelemetry-collector-contrib/receiver/carbonreceiver v0.0.0-00010101000000-000000000000
 	github.com/open-telemetry/opentelemetry-collector-contrib/receiver/sapmreceiver v0.0.0-00010101000000-000000000000
 	github.com/open-telemetry/opentelemetry-collector-contrib/receiver/signalfxreceiver v0.0.0-00010101000000-000000000000
+	github.com/open-telemetry/opentelemetry-collector-contrib/testbed/mockdatareceivers/mockawsemfreceiver v0.0.0-00010101000000-000000000000
 	github.com/open-telemetry/opentelemetry-collector-contrib/testbed/mockdatareceivers/mockawsxrayreceiver v0.0.0-00010101000000-000000000000
 	go.opentelemetry.io/collector v0.13.1-0.20201103180041-ab843b20c2fb
 	go.uber.org/zap v1.16.0
@@ -34,3 +35,7 @@ replace github.com/open-telemetry/opentelemetry-collector-contrib/receiver/sapmr
 replace github.com/open-telemetry/opentelemetry-collector-contrib/receiver/signalfxreceiver => ../receiver/signalfxreceiver
 
 replace github.com/open-telemetry/opentelemetry-collector-contrib/testbed/mockdatareceivers/mockawsxrayreceiver => ../testbed/mockdatareceivers/mockawsxrayreceiver
+
+replace github.com/open-telemetry/opentelemetry-collector-contrib/testbed/mockdatareceivers/mockawsemfreceiver => ./mockdatareceivers/mockawsemfreceiver
+
+replace go.opentelemetry.io/collector => ../../opentelemetry-collector
